@@ -2,26 +2,26 @@
   (:require [clojure.test :refer :all]
             [labyrinth.solution :refer :all]))
 
-(deftest test-3-3-labyrinth
+(deftest test-exit-labyrinth
   (testing
-    (let [labyrinth [[1 :_ :W]
-                     [:W :_ :W]
-                     [:W :_ :Exit]]
-          solution [[1 1 :W]
-                    [:W 1 :W]
-                    [:W 1 1]]]
+    (let [labyrinth [[1 :W :_ :_]
+                     [:_ :W :W :_]
+                     [:_ :_ :_ :Exit]]
+          solution [[1 :W :_ :_]
+                    [1 :W :W :_]
+                    [1 1 1 1]]]
       (is (= solution (solve labyrinth))))))
 
-(deftest test-4-4-labyrinth
+(deftest test-exit-labyrinth2
   (testing
-   (let [labyrinth [[1 :_ :_ :W]
-                    [:W :W :_ :W]
-                    [:W :W :_ :W]
-                    [:W :W :_ :Exit]]
-         solution [[1 1 1 :W]
-                   [:W :W 1 :W]
-                   [:W :W 1 :W]
-                   [:W :W 1 1]]]
+   (let [labyrinth [[1 :W :_ :W]
+                    [:_ :W :_ :W]
+                    [:_ :W :W :W]
+                    [:_ :_ :_ :Exit]]
+         solution [[1 :W :_ :W]
+                   [1 :W :_ :W]
+                   [1 :W :W :W]
+                   [1 1 1 1]]]
     (is (= solution (solve labyrinth))))))
 
 (deftest test-starting-point
@@ -38,14 +38,23 @@
 
 (deftest test-no-starting-point
   (testing
-   (let [labyrinth [[:_ :_ 1 :W]
+   (let [labyrinth [[:_ :_ :W :W]
                     [:W :W :_ :_]
                     [:W :_ :_ :W]
                     [:W :W :_ :Exit]]
-         solution  [[:_ :_ 1 :W]
-                    [:W :W 1 :_]
-                    [:W :_ 1 :W]
-                    [:W :W 1 1]]]
+         solution  [[:_ :_ :W :W]
+                    [:W :W :_ :_]
+                    [:W :_ :_ :W]
+                    [:W :W :_ :Exit]]]
+    (is (= solution (solve labyrinth))))))
+
+(deftest test-no-solution 
+  (testing
+   (let [labyrinth [[:W :_ :W :W]
+                    [:W 1 :_ :_]
+                    [:W :_ :_ :W]
+                    [:W :W :W :Exit]]
+         solution  ["unable to exit"]]
     (is (= solution (solve labyrinth))))))
 
 (deftest test-optimal-solution 
