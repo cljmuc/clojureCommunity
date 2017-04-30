@@ -1,4 +1,4 @@
-(ns labyrinth.solution_test
+(ns labyrinth.test
   (:require [clojure.test :refer :all]
             [labyrinth.solution :refer :all]))
 
