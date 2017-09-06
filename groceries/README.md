@@ -84,7 +84,7 @@ ___________________________________________
 
 | orangejuice	  |    2,00   |      10%    | buy 2 get 1 free
 
-| choclate   	  |    1,50   |      10%    | Purchased sum>10€ --> 1 choclate free
+| choclate   	  |    1,50   |      10%    | -
 
 | coffee		  |    3,00   |      -  	| buy 3 get 1 free
 
@@ -96,9 +96,9 @@ ________________________________________________________________________________
 
 
 
-2x O-juice, 1x chocolate, 3x coffee ->  1x 1,80€ + 0x 1,35 € + 2x 3,00 € = 10,80 €
+2x O-juice, 1x chocolate, 3x coffee ->  1x 1,80€ + 1x 1,35 € + 2x 3,00 € = 12,15 €
 
-2x eggs, 4x O-juice, 3x chocolate   ->  2x 1,70€ + 2x 1,80,€ + 3x 1,35 € = 11,05 € (+ 1 choclate for free)
+2x eggs, 4x O-juice, 3x chocolate   ->  2x 1,70€ + 2x 1,80,€ + 3x 1,35 € = 11,05 €
 
 
 
@@ -113,6 +113,7 @@ solve, solve-discount and solve-special-offer. The tests should return the same
 values as before. 
 
 
+Purchased sum>10€ --> 1 choclate free
 
 instead of just returning the sum, return also an info about how much you saved when you
 

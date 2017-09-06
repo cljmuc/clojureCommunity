@@ -30,7 +30,7 @@
 (deftest test-groceries-special-offer
   (testing
     (let [input (list "orangejuice","orangejuice", "choclate", "coffee", "coffee", "coffee")
-          solution 10.80]
+          solution 12.15]
       (is (= solution (solve-special-offer input))))))
 
 (deftest test-groceries-special-offer2
